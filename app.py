@@ -22,6 +22,221 @@ st.set_page_config(
     layout="wide"
 )
 
+# Divine Holy Styling - Warm Anthropic-inspired colors
+st.markdown("""
+<style>
+    /* Import fonts for divine typography */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    /* Holy color palette inspired by Anthropic */
+    :root {
+        --holy-cream: #faf8f5;
+        --holy-beige: #f5f2ed;
+        --holy-warm-white: #ffffff;
+        --holy-text-dark: #2d3748;
+        --holy-text-medium: #4a5568;
+        --holy-text-light: #718096;
+        --holy-accent: #cc785c;
+        --holy-accent-light: rgba(204, 120, 92, 0.1);
+        --holy-accent-medium: rgba(204, 120, 92, 0.3);
+        --holy-border: #e2d8d0;
+        --holy-shadow: rgba(204, 120, 92, 0.08);
+        --holy-success: #48bb78;
+        --holy-warning: #ed8936;
+        --holy-error: #f56565;
+    }
+    
+    /* Main app background - sacred parchment */
+    .stApp {
+        background: linear-gradient(135deg, var(--holy-cream) 0%, var(--holy-beige) 100%);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    /* Header styling - divine title */
+    .main h1 {
+        color: var(--holy-text-dark) !important;
+        font-weight: 700 !important;
+        font-size: 3.5rem !important;
+        margin-bottom: 0.5rem !important;
+        text-shadow: 0 2px 4px var(--holy-shadow);
+        letter-spacing: -0.02em;
+    }
+    
+    /* Subtitle and descriptions */
+    .main h2 {
+        color: var(--holy-text-medium) !important;
+        font-weight: 600 !important;
+        font-size: 2rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .main h3 {
+        color: var(--holy-text-medium) !important;
+        font-weight: 600 !important;
+        font-size: 1.5rem !important;
+    }
+    
+    /* Body text - sacred scrolls - ENSURE ALL TEXT IS VISIBLE */
+    .main p, .main div, p, div, span, label {
+        color: var(--holy-text-dark) !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Force all text to be dark and visible */
+    * {
+        color: var(--holy-text-dark) !important;
+    }
+    
+    /* Sidebar - holy sanctuary */
+    .css-1d391kg, .stSidebar {
+        background: var(--holy-warm-white) !important;
+        border-right: 2px solid var(--holy-border) !important;
+        box-shadow: 4px 0 12px var(--holy-shadow) !important;
+    }
+    
+    /* All sidebar text should be visible */
+    .stSidebar *, .sidebar *, .css-1d391kg * {
+        color: var(--holy-text-dark) !important;
+    }
+    
+    .sidebar .stSelectbox label,
+    .sidebar .stTextInput label,
+    .sidebar .stTextArea label,
+    .stSidebar label {
+        color: var(--holy-text-dark) !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+    
+    /* Input fields - divine interface */
+    .stTextInput input,
+    .stTextArea textarea,
+    .stSelectbox select {
+        background: var(--holy-warm-white) !important;
+        border: 2px solid var(--holy-border) !important;
+        border-radius: 8px !important;
+        color: var(--holy-text-dark) !important;
+        font-size: 1rem !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .stTextInput input:focus,
+    .stTextArea textarea:focus {
+        border-color: var(--holy-accent) !important;
+        box-shadow: 0 0 0 3px var(--holy-accent-light) !important;
+    }
+    
+    /* Buttons - sacred actions */
+    .stButton button {
+        background: linear-gradient(135deg, var(--holy-accent) 0%, #b86650 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.75rem 1.5rem !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px var(--holy-shadow) !important;
+    }
+    
+    .stButton button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 16px var(--holy-accent-medium) !important;
+    }
+    
+    /* Chat interface - divine conversation */
+    .stChatMessage {
+        background: var(--holy-warm-white) !important;
+        border: 1px solid var(--holy-border) !important;
+        border-radius: 12px !important;
+        margin: 1rem 0 !important;
+        box-shadow: 0 2px 8px var(--holy-shadow) !important;
+    }
+    
+    /* Data frames - sacred tables */
+    .dataframe {
+        background: var(--holy-warm-white) !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 12px var(--holy-shadow) !important;
+    }
+    
+    /* Remove problematic background styling - keep it simple */
+    
+    /* Metrics - divine statistics */
+    .metric-container {
+        background: var(--holy-warm-white) !important;
+        border: 1px solid var(--holy-border) !important;
+        border-radius: 8px !important;
+        padding: 1rem !important;
+        box-shadow: 0 2px 8px var(--holy-shadow) !important;
+    }
+    
+    /* Expander - sacred scrolls */
+    .streamlit-expanderHeader {
+        background: var(--holy-beige) !important;
+        border: 1px solid var(--holy-border) !important;
+        border-radius: 8px !important;
+        color: var(--holy-text-dark) !important;
+        font-weight: 600 !important;
+    }
+    
+    /* File uploader - sacred offerings */
+    .stFileUploader {
+        background: var(--holy-warm-white) !important;
+        border: 2px dashed var(--holy-border) !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .stFileUploader:hover {
+        border-color: var(--holy-accent) !important;
+        background: var(--holy-accent-light) !important;
+    }
+    
+    /* Column separators - divine divisions */
+    .element-container {
+        margin: 0.5rem 0 !important;
+    }
+    
+    /* Loading spinner - holy meditation */
+    .stSpinner {
+        color: var(--holy-accent) !important;
+    }
+    
+    /* Links - sacred connections */
+    a {
+        color: var(--holy-accent) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    a:hover {
+        color: #b86650 !important;
+        text-decoration: underline !important;
+    }
+    
+    /* Custom holy glow effect for important elements */
+    .holy-glow {
+        box-shadow: 0 0 20px var(--holy-accent-light) !important;
+        border: 2px solid var(--holy-accent) !important;
+    }
+    
+    /* Responsive typography scaling */
+    @media (max-width: 768px) {
+        .main h1 {
+            font-size: 2.5rem !important;
+        }
+        .main h2 {
+            font-size: 1.75rem !important;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
+
 class HolySheetApp:
     def __init__(self):
         self.claude = None
