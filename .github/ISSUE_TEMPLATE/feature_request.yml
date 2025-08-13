@@ -1,0 +1,79 @@
+name: ✨ Feature Request
+description: Suggest a divine new feature for HolySheet
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make HolySheet even more divine? 🙏 We'd love to hear it!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What problem does this feature solve?
+      placeholder: I'm frustrated when... It would be helpful if...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your ideal solution
+      placeholder: I'd like to be able to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered other approaches?
+      placeholder: Other ways this could work...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve my workflow
+        - High - Important for my use case
+        - Critical - Blocking my usage
+    validations:
+      required: true
+
+  - type: dropdown
+    id: usertype
+    attributes:
+      label: User Type
+      description: What type of user would benefit?
+      options:
+        - Personal finance user
+        - Small business owner
+        - Data analyst
+        - Developer
+        - All users
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use Case Example
+      description: Provide a specific example of how you'd use this feature
+      placeholder: "For example: I have a sheet with 10,000 transactions and want to..."
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be interested in helping implement this?
+      options:
+        - label: I'd be willing to contribute code
+        - label: I'd be willing to test the feature
+        - label: I'd be willing to write documentation
