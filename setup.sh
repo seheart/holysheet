@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "🚀 Claude Sheets Assistant Setup"
-echo "================================"
+echo "🙏 HolySheet Setup - Divine Sheets Analysis"
+echo "=========================================="
 
 # Check if Python is installed
 if ! command -v python3 &> /dev/null; then
@@ -30,4 +30,4 @@ echo ""
 echo "3. Run the app:"
 echo "   streamlit run app.py"
 echo ""
-echo "🌟 Ready to analyze your Google Sheets with Claude!"
+echo "🙏 Holy Sheet, you're ready to divine insights from your spreadsheets!"

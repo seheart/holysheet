@@ -1,4 +1,4 @@
-# Claude Sheets Assistant
+# HolySheet 🙏
 
 A local web application for analyzing Google Sheets with Claude AI. Perfect for financial data analysis and cleanup.
 
@@ -27,8 +27,8 @@ A local web application for analyzing Google Sheets with Claude AI. Perfect for 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/claude-sheets-assistant.git
-   cd claude-sheets-assistant
+   git clone https://github.com/your-username/holysheet.git
+   cd holysheet
    ```
 
 2. **Install dependencies**:
@@ -75,7 +75,7 @@ A local web application for analyzing Google Sheets with Claude AI. Perfect for 
 ## Project Structure
 
 ```
-claude-sheets-assistant/
+holysheet/
 ├── app.py                 # Main Streamlit application
 ├── requirements.txt       # Python dependencies
 ├── setup.sh              # Setup script
@@ -90,7 +90,7 @@ claude-sheets-assistant/
 
 ### Adding Features
 
-Ideas for future enhancements:
+Ideas for future HolySheet enhancements:
 - [ ] Export analysis reports to PDF
 - [ ] Batch processing multiple sheets
 - [ ] Custom AI prompts/templates
