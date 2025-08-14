@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-HolySheet - Divine Google Sheets Analysis with Claude AI
+Claude Sheets Web App
 A local web interface to analyze Google Sheets with Claude
-Run: streamlit run app.py
+Run: streamlit run claude_sheets_webapp.py
 """
 
 import streamlit as st
@@ -17,12 +17,12 @@ import re
 
 # Page config
 st.set_page_config(
-    page_title="HolySheet 🙏",
-    page_icon="🙏",
+    page_title="Claude Sheets Assistant",
+    page_icon="🤖",
     layout="wide"
 )
 
-class HolySheetApp:
+class ClaudeSheetsWebApp:
     def __init__(self):
         self.claude = None
         self.sheets_service = None
@@ -142,12 +142,12 @@ Please provide specific, actionable advice about this financial data. Include ex
             return f"Error: {str(e)}"
 
 def main():
-    st.title("🙏 HolySheet")
-    st.write("Divine Google Sheets analysis with Claude AI - Holy Sheet, this is powerful!")
+    st.title("🤖 Claude Sheets Assistant")
+    st.write("Analyze your Google Sheets with Claude in a separate window!")
     
     # Initialize session state
     if 'app' not in st.session_state:
-        st.session_state.app = HolySheetApp()
+        st.session_state.app = ClaudeSheetsWebApp()
     if 'messages' not in st.session_state:
         st.session_state.messages = []
     if 'current_sheet_data' not in st.session_state:

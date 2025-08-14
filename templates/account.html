@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - HolySheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo & Brand -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <h1 class="text-3xl font-black text-gray-900 tracking-tight">🙏 HolySheet</h1>
+                        <p class="ml-4 text-sm text-gray-600 font-medium hidden sm:block">Divine Google Sheets Analysis</p>
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Dashboard</a>
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Pricing</a>
+                    <a href="#docs" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Docs</a>
+                    <a href="#support" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Support</a>
+                </nav>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:flex items-center space-x-3">
+                        <a href="/profile" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Profile</a>
+                        <a href="/account" class="text-gray-900 hover:text-gray-600 font-semibold text-sm transition-colors">Account</a>
+                        <button class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-black text-gray-900 tracking-tight">Account Settings</h1>
+            <p class="mt-2 text-gray-600 font-medium">Manage your API keys, integrations, and account preferences</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Settings Navigation -->
+            <div class="lg:col-span-1">
+                <nav class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-lg font-bold text-gray-900 tracking-tight">Settings</h2>
+                    </div>
+                    <div class="p-2">
+                        <a href="/profile" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                            Profile
+                        </a>
+                        <a href="/account" class="flex items-center px-4 py-3 text-sm font-semibold text-gray-900 bg-gray-50 rounded-lg">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Account
+                        </a>
+                        <a href="#billing" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                            </svg>
+                            Billing
+                        </a>
+                        <a href="#security" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                            Security
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Account Content -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- API Keys Section -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">🔑 API Keys</h2>
+                        <p class="mt-1 text-sm text-gray-600">Manage your API keys for external services</p>
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <!-- Anthropic API Key -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <label for="anthropic-key" class="block text-sm font-semibold text-gray-900">
+                                    Anthropic API Key
+                                </label>
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">Required</span>
+                            </div>
+                            <input
+                                type="password"
+                                id="anthropic-key"
+                                placeholder="sk-ant-..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black transition-all font-medium"
+                            >
+                            <div class="mt-2 flex items-center justify-between">
+                                <p class="text-xs text-gray-500">Get your API key from <a href="https://console.anthropic.com" target="_blank" class="text-black hover:underline font-medium">console.anthropic.com</a></p>
+                                <button class="text-xs text-gray-600 hover:text-gray-900 font-medium">Test Connection</button>
+                            </div>
+                        </div>
+
+                        <!-- Google Sheets API -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <label class="block text-sm font-semibold text-gray-900">
+                                    Google Sheets API
+                                </label>
+                                <span class="text-xs text-green-700 bg-green-100 px-2 py-1 rounded-full">Connected</span>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-900">Google account connected</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1 ml-8">Access to read Google Sheets data</p>
+                            </div>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="flex justify-end pt-4 border-t border-gray-200">
+                            <button
+                                type="button"
+                                class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-semibold text-sm tracking-wide"
+                            >
+                                Save API Keys
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage & Limits -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">📊 Usage & Limits</h2>
+                        <p class="mt-1 text-sm text-gray-600">Monitor your API usage and current limits</p>
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <!-- Claude API Usage -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-900">Claude API Requests</span>
+                                <span class="text-sm text-gray-600">847 / 1,000</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-black h-2 rounded-full" style="width: 84.7%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Resets monthly on the 15th</p>
+                        </div>
+
+                        <!-- Sheets Analyzed -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-900">Sheets Analyzed</span>
+                                <span class="text-sm text-gray-600">23 / 50</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 46%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Monthly limit based on your plan</p>
+                        </div>
+
+                        <!-- Upgrade Notice -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <div class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-500 mt-0.5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-blue-900">Approaching Limits</h3>
+                                    <p class="text-xs text-blue-700 mt-1">You're using 84% of your Claude API requests. Consider upgrading for higher limits.</p>
+                                    <button class="text-xs text-blue-800 hover:text-blue-900 font-medium mt-2 underline">View Plans</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">⚙️ Preferences</h2>
+                        <p class="mt-1 text-sm text-gray-600">Customize your HolySheet experience</p>
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <!-- Default Analysis Mode -->
+                        <div>
+                            <label for="analysis-mode" class="block text-sm font-semibold text-gray-900 mb-2">
+                                Default Analysis Mode
+                            </label>
+                            <select
+                                id="analysis-mode"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black transition-all font-medium"
+                            >
+                                <option>Comprehensive Analysis</option>
+                                <option>Quick Insights</option>
+                                <option>Financial Focus</option>
+                                <option>Data Validation</option>
+                            </select>
+                        </div>
+
+                        <!-- Auto-save Results -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-semibold text-gray-900">Auto-save Analysis Results</span>
+                                <p class="text-xs text-gray-500">Automatically save chat conversations and insights</p>
+                            </div>
+                            <button class="bg-black w-12 h-6 rounded-full relative transition-colors">
+                                <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"></span>
+                            </button>
+                        </div>
+
+                        <!-- Email Notifications -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-semibold text-gray-900">Email Notifications</span>
+                                <p class="text-xs text-gray-500">Receive updates about your account and usage</p>
+                            </div>
+                            <button class="bg-gray-300 w-12 h-6 rounded-full relative transition-colors">
+                                <span class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"></span>
+                            </button>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="flex justify-end pt-4 border-t border-gray-200">
+                            <button
+                                type="button"
+                                class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-semibold text-sm tracking-wide"
+                            >
+                                Save Preferences
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

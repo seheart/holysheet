@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙏 HolySheet - Divine Google Sheets Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo & Brand -->
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-black text-gray-900 tracking-tight">🙏 HolySheet</h1>
+                    <p class="ml-4 text-sm text-gray-600 font-medium hidden sm:block">Divine Google Sheets Analysis</p>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Pricing</a>
+                    <a href="#docs" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Docs</a>
+                    <a href="#support" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Support</a>
+                </nav>
+
+                <!-- Auth Links & Status -->
+                <div class="flex items-center space-x-4">
+                    <div id="connection-status" class="px-3 py-1 rounded-full text-xs bg-gray-100 text-gray-600 font-medium">
+                        Connecting...
+                    </div>
+                    <div class="hidden sm:flex items-center space-x-3">
+                        <a href="/profile" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Profile</a>
+                        <a href="/account" class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Account</a>
+                        <button class="text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Logout</button>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden border-t border-gray-200 bg-gray-50 hidden" id="mobile-menu">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#features" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Features</a>
+                <a href="#pricing" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Pricing</a>
+                <a href="#docs" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Docs</a>
+                <a href="#support" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Support</a>
+                <hr class="border-gray-200">
+                <a href="/profile" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Profile</a>
+                <a href="/account" class="block text-gray-600 hover:text-gray-900 font-medium text-sm">Account</a>
+                <button class="block text-gray-600 hover:text-gray-900 font-medium text-sm text-left w-full">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Setup Panel -->
+            <div class="lg:col-span-1">
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">⚙️ Setup</h2>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <!-- Setup Notice -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <div class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-500 mt-0.5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-blue-900">Setup Required</h3>
+                                    <p class="text-xs text-blue-700 mt-1">Configure your API keys in Account Settings to start analyzing sheets.</p>
+                                    <a href="/account" class="text-xs text-blue-800 hover:text-blue-900 font-medium mt-2 underline">Go to Account Settings</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Sheets -->
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-900 mb-3">📊 Google Sheets</h3>
+                            <div class="space-y-4">
+                                <input
+                                    type="text"
+                                    id="sheet-url"
+                                    placeholder="Paste Google Sheets URL or ID"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black transition-all font-medium"
+                                >
+                                <button
+                                    id="load-sheet"
+                                    class="w-full bg-black text-white px-4 py-3 rounded-lg hover:bg-gray-800 transition-all font-semibold text-sm tracking-wide"
+                                >
+                                    📥 Load Sheet
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div id="quick-actions" class="hidden">
+                            <h3 class="text-sm font-semibold text-gray-900 mb-4">🚀 Quick Actions</h3>
+                            <div class="grid grid-cols-1 gap-3">
+                                <button class="quick-action bg-blue-50 text-blue-800 px-4 py-3 rounded-lg hover:bg-blue-100 transition-all text-sm font-semibold border border-blue-100" data-action="analyze">
+                                    📊 Analyze Data
+                                </button>
+                                <button class="quick-action bg-green-50 text-green-800 px-4 py-3 rounded-lg hover:bg-green-100 transition-all text-sm font-semibold border border-green-100" data-action="clean">
+                                    🧹 Clean Data
+                                </button>
+                                <button class="quick-action bg-yellow-50 text-yellow-800 px-4 py-3 rounded-lg hover:bg-yellow-100 transition-all text-sm font-semibold border border-yellow-100" data-action="trends">
+                                    📈 Find Trends
+                                </button>
+                                <button class="quick-action bg-purple-50 text-purple-800 px-4 py-3 rounded-lg hover:bg-purple-100 transition-all text-sm font-semibold border border-purple-100" data-action="formulas">
+                                    🔧 Suggest Formulas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat & Data Panel -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Chat Interface -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">💬 Chat with Claude</h2>
+                    </div>
+                    <div class="h-96 overflow-y-auto p-6" id="chat-container">
+                        <div class="text-center text-gray-500 py-8">
+                            Start a conversation with Claude about your data...
+                        </div>
+                    </div>
+                    <div class="px-6 py-5 border-t border-gray-200">
+                        <div class="flex space-x-4">
+                            <input
+                                type="text"
+                                id="chat-input"
+                                placeholder="Ask Claude about your sheet..."
+                                class="flex-1 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black transition-all font-medium"
+                            >
+                            <button
+                                id="send-chat"
+                                class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-semibold text-sm tracking-wide"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Preview -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-900 tracking-tight">📊 Sheet Preview</h2>
+                    </div>
+                    <div class="p-6" id="data-container">
+                        <div class="text-center text-gray-500 py-8">
+                            Load a Google Sheet to see data preview
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript for real-time functionality -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

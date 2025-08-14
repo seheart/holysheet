@@ -1,1 +1,0 @@
-# HolySheet Authentication Module
